@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../css/style.css">
     
@@ -17,42 +18,120 @@
     <header class="header">
         <div class="container header__container">
             <a href="indexHernex.html" class="header__logo"><img src="../img/LogotipoHernex.png" alt="Logo Hernex" class="header__logo-img"></a>
+            
             <nav class="nav" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="indexHernex.html" class="nav__link">Inicio</a></li>
-                    <li><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
-                    <li><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
-                    <li><a href="sobre-miHernex.html" class="nav__link active">Sobre Mí</a></li>
-                    <li><a href="contactoHernex.html" class="nav__link nav__link--button">Contáctame</a></li>
+                    <li class="nav__item"><a href="indexHernex.html" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
+                    <li class="nav__item"><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
+                    <li class="nav__item"><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
+                    <li class="nav__item"><a href="contactoHernex.html" class="nav__link nav__link--button">Contacto</a></li>
                 </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
             </nav>
+
             <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
     <main>
+        <section class="section page-header">
+            <div class="container">
+                <h1>La Cara Detrás de Hernex</h1>
+                <p>Pasión por la construcción, compromiso con la calidad.</p>
+            </div>
+        </section>
+
         <section class="section">
-            <div class="container about__container">
-                <div class="about__image">
-                    <img src="../img/foto-alberto.jpg" alt="Alberto Esquivel Hernández, dueño de Hernex Construcciones">
-                </div>
-                <div class="about__content">
-                    <h2 class="section__title" style="text-align: left;">Alberto Esquivel Hernández</h2>
-                    <p class="about__bio">"Desde adolescente me he dedicado al oficio de la albañilería, tengo más de 15 años de experiencia. He tenido proyectos que me han hecho mejorar en este oficio, y lo he podido adquirir cada día más gracias a mi excelencia."</p>
-                    <h3>Mi Compromiso Contigo</h3>
-                    <ul class="about__values">
-                        <li><i class="fas fa-check-circle"></i> <strong>Garantía sobre el trabajo realizado</strong> </li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Especialización sobre acabados y remodelaciones</strong></li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Presupuestos sobre detallados y sin sorpresas</strong></li>
-                    </ul>
+            <div class="container">
+                <div class="about-me__grid">
+                    <div class="about-me__image-container">
+                        <img src="../img/foto-alberto.jpg" alt="Alberto Esquivel Hernández, fundador de Hernex Construcciones">
+                    </div>
+                    <div class="about-me__content">
+                        <span class="about-me__subtitle">Fundador y Maestro de Obra</span>
+                        <h2 class="about-me__signature">Alberto Esquivel Hernández</h2>
+                        <p>Con más de 15 años de experiencia en el sector de la construcción, fundé Hernex con una visión clara: ofrecer un servicio de albañilería honesto, detallado y de la más alta calidad. Mi pasión es transformar espacios y construir estructuras que no solo sean sólidas, sino que también mejoren la vida de mis clientes.</p>
+                        <p>Cada proyecto, grande o pequeño, lo superviso personalmente para garantizar que cada ladrillo, cada acabado y cada detalle cumpla con los estándares de excelencia que nos definen. Tu confianza es mi mayor construcción.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="section section--gray values-section">
+            <div class="container">
+                <h2 class="section__title">Nuestros Pilares</h2>
+                <div class="values__grid">
+                    <div class="value-card">
+                        <div class="value-card__icon"><i class="fas fa-award"></i></div>
+                        <h3>Calidad Garantizada</h3>
+                        <p>Utilizamos solo materiales de primera y técnicas probadas para asegurar resultados duraderos y de excelencia que superen tus expectativas.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Compromiso Total</h3>
+                        <p>Nos comprometemos con tu proyecto de principio a fin, cumpliendo con los tiempos acordados y manteniendo una comunicación clara y constante.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Confianza y Honestidad</h3>
+                        <p>Operamos con total transparencia. Recibirás presupuestos justos y detallados, sin costos ocultos ni sorpresas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container text-center">
+                <h2>¿Listo para construir tu proyecto?</h2>
+                <p>Hablemos de tus ideas. Estoy aquí para asesorarte y ayudarte a hacerlas realidad.</p>
+                <a href="contactoHernex.html" class="btn btn--primary">Contactar Ahora</a>
+            </div>
+        </section>
+
     </main>
     
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+        <div class="container footer__container">
+            <div class="footer__col">
+                <a href="indexHernex.html">
+                    <img src="../img/LogotipoHernex.png" alt="Logotipo Hernex Construcciones" class="footer__logo">
+                </a>
+                <p>Construyendo confianza y calidad en cada proyecto. Tu visión es nuestro plano.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="indexHernex.html">Inicio</a></li>
+                    <li><a href="serviciosHernex.html">Servicios</a></li>
+                    <li><a href="proyectosHernex.html">Proyectos</a></li>
+                    <li><a href="sobre-miHernex.html">Sobre Mí</a></li>
+                    <li><a href="contactoHernex.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Aguascalientes, Ags., México</p>
+                <p><i class="fas fa-phone-alt"></i> 449 228 9906</p>
+                <p><i class="fas fa-envelope"></i> contacto@hernex.com</p>
+                <div class="footer__socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom-bar">
+            <div class="container bottom-bar__content">
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-trowel"></i>
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <p>© 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-hammer"></i>
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
         </div>
     </footer>
 

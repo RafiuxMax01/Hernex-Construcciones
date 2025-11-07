@@ -17,15 +17,18 @@
     <header class="header">
         <div class="container header__container">
             <a href="indexHernex.html" class="header__logo"><img src="../img/LogotipoHernex.png" alt="Logo Hernex" class="header__logo-img"></a>
+            
             <nav class="nav" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="indexHernex.html" class="nav__link">Inicio</a></li>
-                    <li><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
-                    <li><a href="proyectosHernex.html" class="nav__link active">Proyectos</a></li>
-                    <li><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
-                    <li><a href="contactoHernex.html" class="nav__link nav__link--button">Contáctame</a></li>
+                    <li class="nav__item"><a href="indexHernex.html" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
+                    <li class="nav__item"><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
+                    <li class="nav__item"><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
+                    <li class="nav__item"><a href="contactoHernex.html" class="nav__link nav__link--button">Contacto</a></li>
                 </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
             </nav>
+
             <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
@@ -40,34 +43,123 @@
 
         <section class="section section--gray">
             <div class="container">
-                <h2 class="section__title">Galería de Trabajos</h2>
-                <div class="gallery__grid">
-                    <img src="../img/proyecto1.jpg" alt="Remodelación de cocina">
-                    <img src="../img/proyecto2.jpg" alt="Construcción de barda perimetral">
-                    <img src="../img/proyecto3.jpg" alt="Colocación de piso de porcelanato">
-                    <img src="../img/proyecto4.jpg" alt="Aplanado de fachada">
-                    <img src="../img/proyecto5.jpg" alt="Baño con azulejo nuevo">
-                    <img src="../img/proyecto6.jpg" alt="Losa de concreto">
-                </div>
-                
-                <h2 class="section__title" style="margin-top: 5rem;">Transformaciones: Antes y Después</h2>
-                <div class="gallery__grid--comparison">
-                    <figure>
-                        <img src="../img/antes1.jpg" alt="Antes de la remodelación">
-                        <figcaption>ANTES</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="../img/despues1.jpg" alt="Después de la remodelación">
-                        <figcaption>DESPUÉS</figcaption>
-                    </figure>
+                <h2 class="section__title">Transformaciones Notables</h2>
+                <p class="section__subtitle">Cada proyecto es una historia de cambio. Desliza la barra sobre las imágenes para ver la transformación del antes y después.</p>
+
+                <div class="projects-container">
+
+                    <!-- Proyecto 1: Imagen a la Izquierda -->
+                    <div class="project-entry">
+                        <div class="project-entry__image-container">
+                            <div class="slider-container">
+                                <div class="slider-image slider-image--before">
+                                    <img src="../img/antes1.jpg" alt="Cocina antes de la remodelación">
+                                </div>
+                                <div class="slider-image slider-image--after">
+                                    <img src="../img/despues1.jpg" alt="Cocina después de la remodelación">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-handle__arrow slider-handle__arrow--left"></div>
+                                    <div class="slider-handle__arrow slider-handle__arrow--right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-entry__description">
+                            <h3>Remodelación Completa de Cocina</h3>
+                            <p>Se realizó una demolición completa de la cocina antigua. Se instaló nuevo piso de porcelanato, azulejos en paredes, una barra de granito y gabinetes de madera a medida. El resultado es un espacio moderno, funcional y mucho más luminoso.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2: Imagen a la Derecha -->
+                    <div class="project-entry">
+                        <div class="project-entry__image-container">
+                            <div class="slider-container">
+                                <div class="slider-image slider-image--before">
+                                    <img src="../img/antes2.jpg" alt="Fachada antes de la remodelación">
+                                </div>
+                                <div class="slider-image slider-image--after">
+                                    <img src="../img/despues2.jpg" alt="Fachada después de la remodelación">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-handle__arrow slider-handle__arrow--left"></div>
+                                    <div class="slider-handle__arrow slider-handle__arrow--right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-entry__description">
+                            <h3>Renovación de Fachada y Cochera</h3>
+                            <p>Aplicación de aplanado fino en toda la fachada, pintura de alta durabilidad y construcción de un firme de concreto estampado para la cochera. Se añadió un portón nuevo para un look completamente renovado y seguro.</p>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3: Imagen a la Izquierda -->
+                    <div class="project-entry">
+                        <div class="project-entry__image-container">
+                             <div class="slider-container">
+                                <div class="slider-image slider-image--before">
+                                    <img src="../img/antes3.jpg" alt="Baño antes de la remodelación">
+                                </div>
+                                <div class="slider-image slider-image--after">
+                                    <img src="../img/despues3.jpg" alt="Baño después de la remodelación">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-handle__arrow slider-handle__arrow--left"></div>
+                                    <div class="slider-handle__arrow slider-handle__arrow--right"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-entry__description">
+                            <h3>Modernización de Baño</h3>
+                            <p>Se sustituyó todo el azulejo antiguo por uno de diseño contemporáneo. Se instaló un nuevo mueble de baño, sanitario ahorrador y una cancelería de cristal templado, optimizando el espacio y la estética.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
     
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+        <div class="container footer__container">
+            <div class="footer__col">
+                <a href="indexHernex.html">
+                    <img src="../img/LogotipoHernex.png" alt="Logotipo Hernex Construcciones" class="footer__logo">
+                </a>
+                <p>Construyendo confianza y calidad en cada proyecto. Tu visión es nuestro plano.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="indexHernex.html">Inicio</a></li>
+                    <li><a href="serviciosHernex.html">Servicios</a></li>
+                    <li><a href="proyectosHernex.html">Proyectos</a></li>
+                    <li><a href="sobre-miHernex.html">Sobre Mí</a></li>
+                    <li><a href="contactoHernex.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Aguascalientes, Ags., México</p>
+                <p><i class="fas fa-phone-alt"></i> 449 228 9906</p>
+                <p><i class="fas fa-envelope"></i> contacto@hernex.com</p>
+                <div class="footer__socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom-bar">
+            <div class="container bottom-bar__content">
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-trowel"></i>
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <p>© 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-hammer"></i>
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -75,6 +167,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

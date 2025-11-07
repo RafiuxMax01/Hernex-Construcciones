@@ -17,53 +17,143 @@
     <header class="header">
         <div class="container header__container">
             <a href="indexHernex.html" class="header__logo"><img src="../img/LogotipoHernex.png" alt="Logo Hernex" class="header__logo-img"></a>
+            
             <nav class="nav" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="indexHernex.html" class="nav__link">Inicio</a></li>
-                    <li><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
-                    <li><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
-                    <li><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
-                    <li><a href="contactoHernex.html" class="nav__link active nav__link--button">Contáctame</a></li>
+                    <li class="nav__item"><a href="indexHernex.html" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
+                    <li class="nav__item"><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
+                    <li class="nav__item"><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
+                    <li class="nav__item"><a href="contactoHernex.html" class="nav__link nav__link--button">Contacto</a></li>
                 </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
             </nav>
+
             <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
     <main>
-        <section class="section section--dark" id="contacto">
+        <section class="section page-header">
             <div class="container">
-                <h2 class="section__title section__title--light">¿Listo para Empezar tu Proyecto?</h2>
-                <p class="section__subtitle section__subtitle--light">Contáctame para una cotización sin compromiso. Será un placer atenderte.</p>
-                <div class="contact__grid">
-                    <div class="contact__info">
-                        <h3>Información de Contacto</h3>
-                        <p>Llámame o envíame un mensaje para platicar sobre tu proyecto. Estoy para servirte.</p>
-                        <a href="tel:4492289906" class="contact__item">
-                            <i class="fas fa-phone"></i> 449-228-9906
-                        </a>
-                        <a href="https://wa.me/5214492289906?text=Hola,%20vi%20su%20página%20web%20y%20me%20gustaría%20pedir%20una%20cotización." target="_blank" class="contact__item">
-                            <i class="fab fa-whatsapp"></i> 449-228-9906
-                        </a>
-                        <div class="contact__item">
-                            <i class="fas fa-envelope"></i> Próximamente...
+                <h1>Hablemos de tu Proyecto</h1>
+                <p>Estamos listos para escucharte. Completa el formulario o contáctanos directamente.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <!-- Columna del Formulario -->
+                    <div class="contact-form-container">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Describe tu proyecto</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                    <!-- Columna de Información y Mapa -->
+                    <div class="contact-info-container">
+                        <h2>Información de Contacto</h2>
+                        <p>No dudes en llamarnos o visitarnos. Estamos para servirte.</p>
+                        
+                        <div class="info-block">
+                            <div class="info-block__icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="info-block__text">
+                                <h4>Llámanos</h4>
+                                <span>449 228 9906</span>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-block__icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-block__text">
+                                <h4>Escríbenos</h4>
+                                <span>contacto@hernex.com</span>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-block__icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-block__text">
+                                <h4>Ubicación</h4>
+                                <span>Aguascalientes, Ags., México</span>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <!-- ¡IMPORTANTE! Aquí debes pegar el código de Google Maps -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236953.4783821551!2d-102.48323831640623!3d21.854228900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee1812426363%3A0x449b9935a36e7f8c!2sAguascalientes!5e0!3m2!1ses-419!2smx!4v1678845632145!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <form class="contact__form" action="https://formspree.io/f/TU_URL_UNICA" method="POST">
-                        <h3>O déjame tus datos</h3>
-                        <input type="text" name="name" placeholder="Tu Nombre" required>
-                        <input type="tel" name="phone" placeholder="Tu Teléfono" required>
-                        <textarea name="message" placeholder="Cuéntame sobre tu proyecto..." rows="4" required></textarea>
-                        <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
-                    </form>
+
                 </div>
             </div>
         </section>
     </main>
     
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+        <div class="container footer__container">
+            <div class="footer__col">
+                <a href="indexHernex.html">
+                    <img src="../img/LogotipoHernex.png" alt="Logotipo Hernex Construcciones" class="footer__logo">
+                </a>
+                <p>Construyendo confianza y calidad en cada proyecto. Tu visión es nuestro plano.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="indexHernex.html">Inicio</a></li>
+                    <li><a href="serviciosHernex.html">Servicios</a></li>
+                    <li><a href="proyectosHernex.html">Proyectos</a></li>
+                    <li><a href="sobre-miHernex.html">Sobre Mí</a></li>
+                    <li><a href="contactoHernex.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Aguascalientes, Ags., México</p>
+                <p><i class="fas fa-phone-alt"></i> 449 228 9906</p>
+                <p><i class="fas fa-envelope"></i> contacto@hernex.com</p>
+                <div class="footer__socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom-bar">
+            <div class="container bottom-bar__content">
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-trowel"></i>
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <p>© 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+                <div class="bottom-bar__icons">
+                    <i class="fas fa-hammer"></i>
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
         </div>
     </footer>
 
