@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Hernex Construcciones</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="indexHernex.html" class="header__logo"><img src="../img/LogotipoHernex.png" alt="Logo Hernex" class="header__logo-img"></a>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="indexHernex.html" class="nav__link">Inicio</a></li>
+                    <li><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
+                    <li><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
+                    <li><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
+                    <li><a href="contactoHernex.html" class="nav__link active nav__link--button">Contáctame</a></li>
+                </ul>
+            </nav>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section--dark" id="contacto">
+            <div class="container">
+                <h2 class="section__title section__title--light">¿Listo para Empezar tu Proyecto?</h2>
+                <p class="section__subtitle section__subtitle--light">Contáctame para una cotización sin compromiso. Será un placer atenderte.</p>
+                <div class="contact__grid">
+                    <div class="contact__info">
+                        <h3>Información de Contacto</h3>
+                        <p>Llámame o envíame un mensaje para platicar sobre tu proyecto. Estoy para servirte.</p>
+                        <a href="tel:4492289906" class="contact__item">
+                            <i class="fas fa-phone"></i> 449-228-9906
+                        </a>
+                        <a href="https://wa.me/5214492289906?text=Hola,%20vi%20su%20página%20web%20y%20me%20gustaría%20pedir%20una%20cotización." target="_blank" class="contact__item">
+                            <i class="fab fa-whatsapp"></i> 449-228-9906
+                        </a>
+                        <div class="contact__item">
+                            <i class="fas fa-envelope"></i> Próximamente...
+                        </div>
+                    </div>
+                    <form class="contact__form" action="https://formspree.io/f/TU_URL_UNICA" method="POST">
+                        <h3>O déjame tus datos</h3>
+                        <input type="text" name="name" placeholder="Tu Nombre" required>
+                        <input type="tel" name="phone" placeholder="Tu Teléfono" required>
+                        <textarea name="message" placeholder="Cuéntame sobre tu proyecto..." rows="4" required></textarea>
+                        <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hernex Construcciones. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5214492289906?text=Hola,%20vi%20su%20página%20web%20y%20me%20gustaría%20pedir%20una%20cotización." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
