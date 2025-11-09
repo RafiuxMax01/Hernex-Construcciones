@@ -365,7 +365,7 @@ body {
     color: var(--color-text);
 }
 
-/* === ESTILOS PARA SLIDER ANTES/DESPUÉS (VERSIÓN CORREGIDA) === */
+/* === ESTILOS PARA SLIDER ANTES/DESPUÉS (CORREGIDO Y OPTIMIZADO) === */
 .slider-container {
     position: relative;
     overflow: hidden;
@@ -373,6 +373,10 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     cursor: col-resize;
     user-select: none;
+    /* --- ¡CAMBIO AQUÍ! --- 
+      Cambiado de 3/4 (alto) a 4/3 (más apaisado) para que ocupe menos espacio vertical.
+    */
+    aspect-ratio: 4 / 3; 
 }
 
 .slider-image {
@@ -384,16 +388,11 @@ body {
     pointer-events: none;
 }
 
-/* La imagen "antes" define la altura del contenedor */
-.slider-image--before {
-    position: static;
-    height: auto;
-}
-
 .slider-image img {
     display: block;
     width: 100%;
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: 100%;
+    object-fit: cover;
 }
 
 .slider-image--after {
@@ -412,6 +411,7 @@ body {
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    z-index: 10;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -431,19 +431,19 @@ body {
 
 .slider-handle__arrows::before,
 .slider-handle__arrows::after {
-    content: '\25C0'; /* Flecha izquierda */
     position: absolute;
-    transform: translateY(-50%);
     top: 50%;
+    transform: translateY(-50%);
 }
 
 .slider-handle__arrows::before {
-    left: 5px;
+    content: '\25C0'; /* Flecha izquierda */
+    left: 6px;
 }
 
 .slider-handle__arrows::after {
     content: '\25B6'; /* Flecha derecha */
-    right: 5px;
+    right: 6px;
 }
 
 .slider-label {
@@ -457,6 +457,9 @@ body {
     font-size: 0.9rem;
     border-radius: 4px;
     pointer-events: none;
+    z-index: 5;
+    /* --- ¡CAMBIO AQUÍ! --- */
+    transition: opacity 0.3s ease; /* Transición suave para ocultar */
 }
 
 .slider-label--before {
@@ -639,6 +642,7 @@ body {
 .map-container iframe {
     width: 100%;
     height: 100%;
+    border: 0;
 }
 
 /* ======== SECCIÓN CTA (CALL TO ACTION) ======== */
@@ -746,6 +750,32 @@ body {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.3);
 }
+
+/* ======================================================= */
+/* ======== ANIMACIÓN DE LADRILLOS (TRANSICIÓN) ======== */
+/* ======================================================= */
+.card-explosion-overlay {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    grid-template-rows: repeat(8, 1fr);    /* 8 filas = 40 ladrillos */
+    z-index: 2000;
+    pointer-events: none;
+    overflow: hidden; /* Oculta los ladrillos que se salen */
+}
+
+.explosion-brick {
+    background-color: var(--color-primary); /* Mismo color que la tarjeta */
+    width: 100%;
+    height: 100%;
+    /* Estado inicial (antes de la animación) */
+    transform: translate(0, 0) rotate(0) scale(1);
+    opacity: 1;
+    /* Transición para la animación de "explosión" */
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 
 /* ======================================================= */
 /* ======== DISEÑO RESPONSIVO (BREAKPOINTS) ======== */
