@@ -11,7 +11,7 @@
     --font-headings: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    --header-height: 95px; /* Aumentado para más altura */
+    --header-height: 95px;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
     font-family: var(--font-body);
     color: var(--color-text);
     background-color: var(--color-white);
-    padding-top: var(--header-height); /* Espacio para el header fijo */
+    padding-top: var(--header-height);
 }
 
 .container {
@@ -88,7 +88,7 @@ body {
     text-align: center;
 }
 
-/* ======== HEADER Y NAVEGACIÓN ======== */
+/* ==================== HEADER & NAV ==================== */
 .header {
     position: fixed;
     top: 0;
@@ -102,14 +102,15 @@ body {
 }
 
 .header__container {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
 }
 
 .header__logo-img {
-    height: 70px; /* Aumentado para que coincida con la nueva altura */
+    height: 55px;
+    transition: height 0.3s ease;
 }
 
 .nav__list {
@@ -124,7 +125,7 @@ body {
     color: var(--color-primary);
     font-family: var(--font-headings);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 5px 0;
     position: relative;
 }
@@ -154,17 +155,18 @@ body {
 }
 
 .nav__link--button:hover {
-    background-color: #ffca2c; /* Un poco más claro al pasar el cursor */
+    background-color: #ffca2c;
 }
 
 .nav__link--button::after {
-    display: none; /* El botón no necesita el subrayado */
+    display: none;
 }
 
-.nav__toggle {
+.nav__toggle,
+.nav__close {
     font-size: 1.5rem;
     cursor: pointer;
-    display: none; /* Se activará con media queries para móviles */
+    display: none;
     color: var(--color-primary);
 }
 
@@ -177,7 +179,7 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    background-image: url('../img/hero-background.jpg'); /* Asegúrate de tener esta imagen */
+    background-image: url('../img/hero-background.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -188,11 +190,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(11, 37, 48, 0.7); /* Overlay oscuro */
+    background-color: rgba(11, 37, 48, 0.7);
 }
 
 .hero__container {
-    position: relative; /* Para que esté sobre el overlay */
+    position: relative;
     z-index: 2;
 }
 
@@ -250,7 +252,7 @@ body {
     font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
-    flex-grow: 1; /* Empuja el link hacia abajo */
+    flex-grow: 1;
     margin-bottom: 1.5rem;
 }
 
@@ -284,7 +286,6 @@ body {
     color: rgba(255, 255, 255, 0.8);
     margin-top: 0.5rem;
 }
-
 
 /* ======== SERVICES PAGE (TARJETAS DE SERVICIOS) ======== */
 .services-page__grid {
@@ -326,112 +327,11 @@ body {
     color: var(--color-text);
 }
 
-/* ======== FOOTER ======== */
-.footer {
-    background-color: var(--color-light);
-    padding-top: 4rem;
-    color: var(--color-text);
-}
-
-.footer__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding-bottom: 4rem;
-    text-align: center;
-}
-
-.footer__logo {
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-.footer__col h4 {
-    font-family: var(--font-headings);
-    font-size: 1.3rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-}
-
-.footer__col p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.footer__col ul {
-    list-style: none;
-}
-
-.footer__col ul li a {
-    text-decoration: none;
-    color: var(--color-text);
-    display: block;
-    margin-bottom: 0.8rem;
-    transition: color 0.3s ease;
-}
-
-.footer__col ul li a:hover {
-    color: var(--color-primary);
-}
-
-.footer__col .fas {
-    margin-right: 0.5rem;
-    color: var(--color-secondary);
-}
-
-.footer__socials {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    justify-content: center;
-}
-
-.footer__socials a {
-    color: var(--color-primary);
-    font-size: 1.2rem;
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.footer__socials a:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-/* LA BARRA DE COPYRIGHT CON DIBUJITOS */
-.footer__bottom-bar {
-    background-color: var(--color-dark);
-    padding: 1.5rem 0;
-}
-
-.bottom-bar__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.bottom-bar__content p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.bottom-bar__icons {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.3);
-}
-
 /* ======== PROYECTOS (ZIG-ZAG LAYOUT) ======== */
 .projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
     margin-top: 4rem;
 }
 
@@ -440,10 +340,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     gap: 3rem;
-    margin-bottom: 5rem;
 }
 
-/* Zig-zag effect: en filas pares, invierte el orden */
 .project-entry:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -451,7 +349,7 @@ body {
 .project-entry__image-container,
 .project-entry__description {
     flex: 1;
-    min-width: 300px; /* Evita que se aplasten demasiado en pantallas medianas */
+    min-width: 300px;
 }
 
 .project-entry__description h3 {
@@ -467,624 +365,12 @@ body {
     color: var(--color-text);
 }
 
-/* ======== PÁGINA SOBRE MÍ ======== */
-.about-me__grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    align-items: center;
-    gap: 3rem;
-}
-
-.about-me__image-container img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.about-me__subtitle {
-    display: block;
-    font-family: var(--font-headings);
-    color: var(--color-secondary);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.about-me__title {
-    font-family: var(--font-headings);
-    font-size: 2.8rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-}
-
-.about-me__content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-.about-me__signature {
-    font-family: 'Dancing Script', cursive; /* Necesitaremos importar esta fuente */
-    font-size: 2.2rem;
-    color: var(--color-primary);
-    margin-top: 1rem;
-}
-
-/* ======== SECCIÓN DE VALORES ======== */
-.values__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.value-card {
-    background-color: var(--color-white);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.value-card__icon {
-    font-size: 2.8rem;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-}
-
-.value-card h3 {
-    font-family: var(--font-headings);
-    font-size: 1.4rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-}
-
-/* ======== PÁGINA DE CONTACTO ======== */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-}
-
-.contact-form-container h2,
-.contact-info-container h2 {
-    font-family: var(--font-headings);
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-}
-
-.contact-info-container p {
-    margin-bottom: 2rem;
-}
-
-/* Estilos del formulario */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-family: var(--font-headings);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.2);
-}
-
-.contact-form .btn {
-    width: 100%;
-    font-size: 1.1rem;
-}
-
-/* Estilos de la información de contacto */
-.info-block {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.info-block__icon {
-    font-size: 1.8rem;
-    color: var(--color-accent);
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    background-color: var(--color-light);
-    border-radius: 50%;
-}
-
-.info-block__text h4 {
-    font-family: var(--font-headings);
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    margin: 0;
-}
-
-.info-block__text span {
-    color: var(--color-text);
-}
-
-/* Estilos del mapa */
-.map-container {
-    width: 100%;
-    height: 280px;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-}
-
-/* ======== SECCIÓN CTA (CALL TO ACTION) ======== */
-.cta-section {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-.cta-section h2 {
-    font-family: var(--font-headings);
-    font-size: 2.5rem;
-    color: var(--color-white);
-}
-
-.cta-section p {
-    font-size: 1.1rem;
-    margin: 1rem auto 2rem auto;
-    max-width: 500px;
-    color: rgba(255,255,255,0.9);
-}
-
-/* ======== TRANSICIÓN DE LADRILLOS (EN TARJETA) ======== */
-.card-explosion-overlay {
-    position: absolute; /* Se posicionará con JS */
-    z-index: 9999;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    background-color: transparent;
-    /* overflow: hidden; */ /* ¡QUITAMOS ESTA LÍNEA! */
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-.explosion-brick {
-    background-color: var(--color-primary);
-    outline: 1px solid rgba(0,0,0,0.2);
-    /* Animación más larga y con retraso en la opacidad */
-    transition: transform 1.2s cubic-bezier(0.4, 0.0, 1, 1), 
-                opacity 1s ease-in 0.2s;
-}
-
-/* ======== IMAGE COMPARISON SLIDER (VERSIÓN ROBUSTA) ======== */
-.image-comparison-slider {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    cursor: col-resize;
-    user-select: none; /* Evita que se seleccione texto al arrastrar */
-}
-
-.image-comparison-slider img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    pointer-events: none; /* Las imágenes no deben capturar eventos */
-}
-
-.image-comparison-slider__after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* Estado inicial */
-    height: 100%;
-    overflow: hidden;
-}
-
-.image-comparison-slider__handle {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Estado inicial */
-    transform: translateX(-50%);
-    height: 100%;
-    width: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.handle-line {
-    width: 3px;
-    height: 100%;
-    background: var(--color-white);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    flex-grow: 1;
-}
-
-.handle-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-white);
-    color: var(--color-primary);
-    display: grid;
-    place-items: center;
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    flex-shrink: 0;
-}
-
-/* =============================================== */
-/* ======== ESTILOS RESPONSIVOS (MÓVILES) ======== */
-/* =============================================== */
-@media screen and (max-width: 992px) {
-    /* ======== NAVEGACIÓN MÓVIL ======== */
-    .nav__toggle {
-        display: block; /* Muestra el ícono de hamburguesa */
-        color: var(--color-primary);
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Empieza fuera de la pantalla */
-        width: 70%;
-        height: 100%;
-        background-color: var(--color-dark);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-        padding: 4rem 2rem;
-        transition: right 0.4s ease;
-    }
-
-    /* Clase que se añade con JS para mostrar el menú */
-    .nav.show-menu {
-        right: 0;
-    }
-
-    .nav__list {
-        flex-direction: column; /* Apila los enlaces verticalmente */
-        align-items: flex-start;
-        gap: 2.5rem;
-    }
-
-    .nav__link {
-        color: var(--color-white);
-        font-size: 1.2rem;
-    }
-    
-    .nav__link.active::after,
-    .nav__link:hover::after {
-        background-color: var(--color-accent); /* Mantiene el subrayado activo */
-    }
-
-    .nav__link--button {
-        background-color: var(--color-accent);
-        color: var(--color-dark);
-        padding: 0.8rem 1.5rem;
-    }
-
-    .nav__close {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        font-size: 1.8rem;
-        color: var(--color-accent);
-        cursor: pointer;
-    }
-
-    /* ======== AJUSTES GENERALES ======== */
-    .section {
-        padding: 3rem 0;
-    }
-
-    .section__title {
-        font-size: 2rem;
-    }
-
-    body {
-        padding-top: 80px; /* Reduce el padding para un header más pequeño */
-    }
-
-    :root {
-        --header-height: 80px; /* Header más pequeño en móviles */
-    }
-
-    .header__logo-img {
-        height: 55px; /* Logo más pequeño */
-    }
-
-    /* ======== HERO SECTION ======== */
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    /* ======== FOOTER ======== */
-    .footer__container {
-        text-align: center;
-    }
-    .footer__socials {
-        justify-content: center;
-    }
-
-    /* Ocultar los íconos en la barra de copyright en pantallas muy pequeñas */
-    @media screen and (max-width: 500px) {
-        .bottom-bar__icons {
-            display: none;
-        }
-    }
-
-    /* ======== PÁGINA DE CONTACTO ======== */
-    .contact-grid {
-        grid-template-columns: 1fr; /* Apila el formulario y la info */
-        gap: 3rem;
-    }
-
-    .contact-info-container {
-        margin-top: 2rem; /* Espacio extra en móvil */
-    }
-
-    /* ======== PÁGINA SOBRE MÍ ======== */
-    .about-me__grid {
-        grid-template-columns: 1fr; /* Apila la imagen y el texto */
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .about-me__image-container {
-        max-width: 350px; /* Limita el tamaño de la foto en móvil */
-        margin: 0 auto;
-    }
-
-    .about-me__title {
-        font-size: 2.2rem;
-    }
-
-    .about-me__signature {
-        font-size: 2rem;
-    }
-
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-
-    /* ======== PROYECTOS ZIG-ZAG ======== */
-    .project-entry,
-    .project-entry:nth-child(even) {
-        flex-direction: column; /* Apila imagen y texto verticalmente */
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .nav {
-        width: 100%; /* Menú ocupa toda la pantalla en móviles muy pequeños */
-    }
-}
-
-/* ======================================================= */
-/* ======== AUDITORÍA RESPONSIVA COMPLETA (MÓVIL) ======== */
-/* ======================================================= */
-
-/* Para tablets y móviles (hasta 992px) */
-@media screen and (max-width: 992px) {
-    /* ======== AJUSTES GLOBALES ======== */
-    :root {
-        --header-height: 80px; /* Header más compacto */
-    }
-
-    body {
-        padding-top: var(--header-height); /* Ajustar espacio para el header fijo */
-    }
-
-    .container {
-        padding: 0 1rem; /* Menos padding lateral en pantallas pequeñas */
-    }
-
-    .section {
-        padding: 3.5rem 0; /* Menos espaciado vertical en las secciones */
-    }
-
-    .section__title {
-        font-size: 2.2rem; /* Títulos de sección más pequeños */
-    }
-
-    .section__subtitle {
-        font-size: 1rem;
-    }
-
-    /* ======== HEADER Y NAVEGACIÓN MÓVIL ======== */
-    .header__logo-img {
-        height: 55px; /* Logo más pequeño */
-    }
-
-    .nav__toggle {
-        display: block;
-        color: var(--color-primary);
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 320px;
-        height: 100%;
-        background-color: var(--color-dark);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-        padding: 6rem 2rem 2rem;
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .nav.show-menu {
-        right: 0;
-    }
-
-    .nav__list {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2.5rem;
-    }
-
-    .nav__link {
-        color: var(--color-white);
-        font-size: 1.2rem;
-    }
-    
-    .nav__link.active::after,
-    .nav__link:hover::after {
-        background-color: var(--color-accent);
-    }
-
-    .nav__link--button {
-        background-color: var(--color-accent);
-        color: var(--color-dark);
-        padding: 0.8rem 1.5rem;
-    }
-
-    .nav__close {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        font-size: 1.8rem;
-        color: var(--color-accent);
-        cursor: pointer;
-    }
-
-    /* ======== HERO (PÁGINA DE INICIO) ======== */
-    .hero h1 {
-        font-size: 2.5rem; /* Título del hero mucho más manejable */
-        line-height: 1.2;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    /* ======== PÁGINA SOBRE MÍ ======== */
-    .about-me__grid {
-        grid-template-columns: 1fr; /* Apilar imagen y texto */
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    .about-me__image-container {
-        max-width: 320px;
-        margin: 0 auto;
-    }
-
-    .about-me__title {
-        font-size: 2.2rem;
-    }
-
-    .about-me__signature {
-        font-size: 2rem;
-    }
-
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-
-    /* ======== PÁGINA DE PROYECTOS ======== */
-    .project-entry,
-    .project-entry:nth-child(even) {
-        flex-direction: column; /* Apilar imagen y texto en el zig-zag */
-        gap: 2rem;
-    }
-
-    /* Mejorar usabilidad del slider de comparación en táctil */
-    .image-comparison-slider__range::-webkit-slider-thumb {
-        width: 10px; /* Hacer la barra de arrastre más ancha y fácil de tocar */
-        background: var(--color-accent);
-        border: 3px solid var(--color-white);
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    /* ======== PÁGINA DE CONTACTO ======== */
-    .contact-grid {
-        grid-template-columns: 1fr; /* Apilar formulario e información */
-        gap: 3.5rem;
-    }
-
-    /* ======== FOOTER ======== */
-    .footer__container {
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .footer__col ul {
-        padding: 0;
-    }
-
-    .footer__socials {
-        justify-content: center;
-    }
-}
-
-/* Para móviles muy pequeños (hasta 480px) */
-@media screen and (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.1rem; /* Aún más pequeño para los móviles más estrechos */
-    }
-
-    .bottom-bar__content {
-        flex-direction: column; /* Apilar texto e íconos del copyright */
-        gap: 1rem;
-    }
-
-    .bottom-bar__icons {
-        order: -1; /* Poner los íconos arriba del texto */
-    }
-}
-
-/* ======== SLIDER DE COMPARACIÓN (RECONSTRUCCIÓN TOTAL) ======== */
+/* === ESTILOS PARA SLIDER ANTES/DESPUÉS (VERSIÓN CORREGIDA) === */
 .slider-container {
     position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Mantiene la proporción de la imagen */
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     cursor: col-resize;
     user-select: none;
 }
@@ -1095,192 +381,90 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+}
+
+/* La imagen "antes" define la altura del contenedor */
+.slider-image--before {
+    position: static;
+    height: auto;
 }
 
 .slider-image img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .slider-image--after {
-    width: 50%; /* Estado inicial */
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
 
 .slider-handle {
     position: absolute;
     top: 0;
-    left: 50%; /* Estado inicial */
+    left: 50%;
     transform: translateX(-50%);
     width: 4px;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    pointer-events: none; /* El mango no debe interferir con los clics */
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.slider-handle__arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-
-.slider-handle__arrow--left {
-    border-right: 10px solid white;
-    left: -12px;
-}
-
-.slider-handle__arrow--right {
-    border-left: 10px solid white;
-    right: -12px;
-}
-
-/* ======== FOOTER ======== */
-.footer {
-    background-color: var(--color-light);
-    padding-top: 4rem;
-    color: var(--color-text);
-}
-
-.footer__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding-bottom: 4rem;
-    text-align: center;
-}
-
-.footer__logo {
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-.footer__col h4 {
-    font-family: var(--font-headings);
-    font-size: 1.3rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-}
-
-.footer__col p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-.footer__col ul {
-    list-style: none;
-}
-
-.footer__col ul li a {
-    text-decoration: none;
-    color: var(--color-text);
-    display: block;
-    margin-bottom: 0.8rem;
-    transition: color 0.3s ease;
-}
-
-.footer__col ul li a:hover {
-    color: var(--color-primary);
-}
-
-.footer__col .fas {
-    margin-right: 0.5rem;
-    color: var(--color-secondary);
-}
-
-.footer__socials {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
     justify-content: center;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.footer__socials a {
-    color: var(--color-primary);
-    font-size: 1.2rem;
+.slider-handle__arrows {
     width: 40px;
     height: 40px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.footer__socials a:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-/* LA BARRA DE COPYRIGHT CON DIBUJITOS */
-.footer__bottom-bar {
-    background-color: var(--color-dark);
-    padding: 1.5rem 0;
-}
-
-.bottom-bar__content {
+    border: 2px solid var(--color-primary);
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.bottom-bar__content p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.bottom-bar__icons {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-/* ======== PROYECTOS (ZIG-ZAG LAYOUT) ======== */
-.projects-container {
-    margin-top: 4rem;
-}
-
-.project-entry {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 5rem;
-}
-
-/* Zig-zag effect: en filas pares, invierte el orden */
-.project-entry:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.project-entry__image-container,
-.project-entry__description {
-    flex: 1;
-    min-width: 300px; /* Evita que se aplasten demasiado en pantallas medianas */
-}
-
-.project-entry__description h3 {
-    font-family: var(--font-headings);
-    font-size: 1.8rem;
     color: var(--color-primary);
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.project-entry__description p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-text);
+.slider-handle__arrows::before,
+.slider-handle__arrows::after {
+    content: '\25C0'; /* Flecha izquierda */
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.slider-handle__arrows::before {
+    left: 5px;
+}
+
+.slider-handle__arrows::after {
+    content: '\25B6'; /* Flecha derecha */
+    right: 5px;
+}
+
+.slider-label {
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.slider-label--before {
+    left: 1rem;
+}
+
+.slider-label--after {
+    right: 1rem;
 }
 
 /* ======== PÁGINA SOBRE MÍ ======== */
@@ -1319,7 +503,7 @@ body {
 }
 
 .about-me__signature {
-    font-family: 'Dancing Script', cursive; /* Necesitaremos importar esta fuente */
+    font-family: 'Dancing Script', cursive;
     font-size: 2.2rem;
     color: var(--color-primary);
     margin-top: 1rem;
@@ -1379,7 +563,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Estilos del formulario */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -1415,7 +598,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Estilos de la información de contacto */
 .info-block {
     display: flex;
     align-items: center;
@@ -1445,7 +627,6 @@ body {
     color: var(--color-text);
 }
 
-/* Estilos del mapa */
 .map-container {
     width: 100%;
     height: 280px;
@@ -1479,284 +660,129 @@ body {
     color: rgba(255,255,255,0.9);
 }
 
-/* ======== TRANSICIÓN DE LADRILLOS (EN TARJETA) ======== */
-.card-explosion-overlay {
-    position: absolute; /* Se posicionará con JS */
-    z-index: 9999;
+/* ======== FOOTER ======== */
+.footer {
+    background-color: var(--color-light);
+    padding-top: 4rem;
+    color: var(--color-text);
+}
+
+.footer__container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    background-color: transparent;
-    /* overflow: hidden; */ /* ¡QUITAMOS ESTA LÍNEA! */
-    border-radius: 8px;
-    pointer-events: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
 }
 
-.explosion-brick {
-    background-color: var(--color-primary);
-    outline: 1px solid rgba(0,0,0,0.2);
-    /* Animación más larga y con retraso en la opacidad */
-    transition: transform 1.2s cubic-bezier(0.4, 0.0, 1, 1), 
-                opacity 1s ease-in 0.2s;
+.footer__logo {
+    height: 60px;
+    margin-bottom: 1rem;
 }
 
-/* ======== IMAGE COMPARISON SLIDER (VERSIÓN ROBUSTA) ======== */
-.image-comparison-slider {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    cursor: col-resize;
-    user-select: none; /* Evita que se seleccione texto al arrastrar */
+.footer__col h4 {
+    font-family: var(--font-headings);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
 }
 
-.image-comparison-slider img {
-    width: 100%;
-    height: 100%;
+.footer__col p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.footer__col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__col ul li a {
+    text-decoration: none;
+    color: var(--color-text);
     display: block;
-    object-fit: cover;
-    pointer-events: none; /* Las imágenes no deben capturar eventos */
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
 }
 
-.image-comparison-slider__after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* Estado inicial */
-    height: 100%;
-    overflow: hidden;
+.footer__col ul li a:hover {
+    color: var(--color-primary);
 }
 
-.image-comparison-slider__handle {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Estado inicial */
-    transform: translateX(-50%);
-    height: 100%;
-    width: 40px;
+.footer__col .fas {
+    margin-right: 0.5rem;
+    color: var(--color-secondary);
+}
+
+.footer__socials {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.footer__bottom-bar {
+    background-color: var(--color-dark);
+    padding: 1.5rem 0;
+}
+
+.bottom-bar__content {
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    gap: 1.5rem;
 }
 
-.handle-line {
-    width: 3px;
-    height: 100%;
-    background: var(--color-white);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    flex-grow: 1;
+.bottom-bar__content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
 }
 
-.handle-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-white);
-    color: var(--color-primary);
-    display: grid;
-    place-items: center;
+.bottom-bar__icons {
+    display: flex;
+    gap: 1rem;
     font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    flex-shrink: 0;
-}
-
-/* =============================================== */
-/* ======== ESTILOS RESPONSIVOS (MÓVILES) ======== */
-/* =============================================== */
-@media screen and (max-width: 992px) {
-    /* ======== NAVEGACIÓN MÓVIL ======== */
-    .nav__toggle {
-        display: block; /* Muestra el ícono de hamburguesa */
-        color: var(--color-primary);
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Empieza fuera de la pantalla */
-        width: 70%;
-        height: 100%;
-        background-color: var(--color-dark);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-        padding: 4rem 2rem;
-        transition: right 0.4s ease;
-    }
-
-    /* Clase que se añade con JS para mostrar el menú */
-    .nav.show-menu {
-        right: 0;
-    }
-
-    .nav__list {
-        flex-direction: column; /* Apila los enlaces verticalmente */
-        align-items: flex-start;
-        gap: 2.5rem;
-    }
-
-    .nav__link {
-        color: var(--color-white);
-        font-size: 1.2rem;
-    }
-    
-    .nav__link.active::after,
-    .nav__link:hover::after {
-        background-color: var(--color-accent); /* Mantiene el subrayado activo */
-    }
-
-    .nav__link--button {
-        background-color: var(--color-accent);
-        color: var(--color-dark);
-        padding: 0.8rem 1.5rem;
-    }
-
-    .nav__close {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        font-size: 1.8rem;
-        color: var(--color-accent);
-        cursor: pointer;
-    }
-
-    /* ======== AJUSTES GENERALES ======== */
-    .section {
-        padding: 3rem 0;
-    }
-
-    .section__title {
-        font-size: 2rem;
-    }
-
-    body {
-        padding-top: 80px; /* Reduce el padding para un header más pequeño */
-    }
-
-    :root {
-        --header-height: 80px; /* Header más pequeño en móviles */
-    }
-
-    .header__logo-img {
-        height: 55px; /* Logo más pequeño */
-    }
-
-    /* ======== HERO SECTION ======== */
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    /* ======== FOOTER ======== */
-    .footer__container {
-        text-align: center;
-    }
-    .footer__socials {
-        justify-content: center;
-    }
-
-    /* Ocultar los íconos en la barra de copyright en pantallas muy pequeñas */
-    @media screen and (max-width: 500px) {
-        .bottom-bar__icons {
-            display: none;
-        }
-    }
-
-    /* ======== PÁGINA DE CONTACTO ======== */
-    .contact-grid {
-        grid-template-columns: 1fr; /* Apila el formulario y la info */
-        gap: 3rem;
-    }
-
-    .contact-info-container {
-        margin-top: 2rem; /* Espacio extra en móvil */
-    }
-
-    /* ======== PÁGINA SOBRE MÍ ======== */
-    .about-me__grid {
-        grid-template-columns: 1fr; /* Apila la imagen y el texto */
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .about-me__image-container {
-        max-width: 350px; /* Limita el tamaño de la foto en móvil */
-        margin: 0 auto;
-    }
-
-    .about-me__title {
-        font-size: 2.2rem;
-    }
-
-    .about-me__signature {
-        font-size: 2rem;
-    }
-
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-
-    /* ======== PROYECTOS ZIG-ZAG ======== */
-    .project-entry,
-    .project-entry:nth-child(even) {
-        flex-direction: column; /* Apila imagen y texto verticalmente */
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .nav {
-        width: 100%; /* Menú ocupa toda la pantalla en móviles muy pequeños */
-    }
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* ======================================================= */
-/* ======== AUDITORÍA RESPONSIVA COMPLETA (MÓVIL) ======== */
+/* ======== DISEÑO RESPONSIVO (BREAKPOINTS) ======== */
 /* ======================================================= */
 
 /* Para tablets y móviles (hasta 992px) */
 @media screen and (max-width: 992px) {
-    /* ======== AJUSTES GLOBALES ======== */
     :root {
-        --header-height: 80px; /* Header más compacto */
+        --header-height: 80px;
     }
 
     body {
-        padding-top: var(--header-height); /* Ajustar espacio para el header fijo */
+        padding-top: var(--header-height);
     }
 
     .container {
-        padding: 0 1rem; /* Menos padding lateral en pantallas pequeñas */
+        padding: 0 1rem;
     }
 
     .section {
-        padding: 3.5rem 0; /* Menos espaciado vertical en las secciones */
+        padding: 3.5rem 0;
     }
 
     .section__title {
-        font-size: 2.2rem; /* Títulos de sección más pequeños */
+        font-size: 2.2rem;
     }
 
     .section__subtitle {
         font-size: 1rem;
     }
 
-    /* ======== HEADER Y NAVEGACIÓN MÓVIL ======== */
     .header__logo-img {
-        height: 55px; /* Logo más pequeño */
+        height: 55px;
     }
 
     .nav__toggle {
         display: block;
-        color: var(--color-primary);
     }
 
     .nav {
@@ -1805,12 +831,10 @@ body {
         right: 1.5rem;
         font-size: 1.8rem;
         color: var(--color-accent);
-        cursor: pointer;
     }
 
-    /* ======== HERO (PÁGINA DE INICIO) ======== */
     .hero h1 {
-        font-size: 2.5rem; /* Título del hero mucho más manejable */
+        font-size: 2.5rem;
         line-height: 1.2;
     }
 
@@ -1818,9 +842,8 @@ body {
         font-size: 1.1rem;
     }
 
-    /* ======== PÁGINA SOBRE MÍ ======== */
     .about-me__grid {
-        grid-template-columns: 1fr; /* Apilar imagen y texto */
+        grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
     }
@@ -1842,35 +865,20 @@ body {
         font-size: 2rem;
     }
 
-    /* ======== PÁGINA DE PROYECTOS ======== */
     .project-entry,
     .project-entry:nth-child(even) {
-        flex-direction: column; /* Apilar imagen y texto en el zig-zag */
+        flex-direction: column;
         gap: 2rem;
     }
 
-    /* Mejorar usabilidad del slider de comparación en táctil */
-    .image-comparison-slider__range::-webkit-slider-thumb {
-        width: 10px; /* Hacer la barra de arrastre más ancha y fácil de tocar */
-        background: var(--color-accent);
-        border: 3px solid var(--color-white);
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    /* ======== PÁGINA DE CONTACTO ======== */
     .contact-grid {
-        grid-template-columns: 1fr; /* Apilar formulario e información */
+        grid-template-columns: 1fr;
         gap: 3.5rem;
     }
 
-    /* ======== FOOTER ======== */
     .footer__container {
         text-align: center;
         gap: 3rem;
-    }
-
-    .footer__col ul {
-        padding: 0;
     }
 
     .footer__socials {
@@ -1881,15 +889,15 @@ body {
 /* Para móviles muy pequeños (hasta 480px) */
 @media screen and (max-width: 480px) {
     .hero h1 {
-        font-size: 2.1rem; /* Aún más pequeño para los móviles más estrechos */
+        font-size: 2.1rem;
     }
 
     .bottom-bar__content {
-        flex-direction: column; /* Apilar texto e íconos del copyright */
+        flex-direction: column;
         gap: 1rem;
     }
 
     .bottom-bar__icons {
-        order: -1; /* Poner los íconos arriba del texto */
+        order: -1;
     }
 }

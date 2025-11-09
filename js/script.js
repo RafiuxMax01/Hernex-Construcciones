@@ -130,3 +130,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sliders = document.querySelectorAll('.slider-container');
+
+    const moveSlider = (e, slider) => {
+        const rect = slider.getBoundingClientRect();
+        // Previene el comportamiento por defecto en eventos táctiles (como el scroll)
+        if (e.cancelable) e.preventDefault();
+        
+        // Obtiene la coordenada X del puntero (ratón o dedo)
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        
+        // Limita el movimiento dentro del contenedor
+        let position = Math.max(0, Math.min(x, rect.width));
+        let percent = (position / rect.width) * 100;
+
+        // Mueve el manejador y recorta la imagen "después"
+        slider.querySelector('.slider-handle').style.left = `${percent}%`;
+        slider.querySelector('.slider-image--after').style.clipPath = `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;
+    };
+
+    sliders.forEach(slider => {
+        let isDragging = false;
+
+        // Eventos para ratón
+        slider.addEventListener('mousedown', () => isDragging = true);
+        slider.addEventListener('mouseup', () => isDragging = false);
+        slider.addEventListener('mouseleave', () => isDragging = false);
+        slider.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                moveSlider(e, slider);
+            }
+        });
+
+        // Eventos para dispositivos táctiles
+        slider.addEventListener('touchstart', () => isDragging = true);
+        slider.addEventListener('touchend', () => isDragging = false);
+        slider.addEventListener('touchcancel', () => isDragging = false);
+        slider.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                moveSlider(e, slider);
+            }
+        });
+    });
+});
