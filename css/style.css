@@ -11,13 +11,12 @@
     --font-headings: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    /* --- CAMBIOS AQUÍ --- */
-    --header-height: 105px; /* Aumentado de 95px a 105px */
-    --top-bar-height: 35px; /* Altura de la nueva barra superior */
-    --header-bottom-bar-height: 8px; /* Altura de la nueva barra inferior */
+    --header-height: 120px; 
+    --top-bar-height: 40px; 
+    --header-bottom-bar-height: 8px; 
 }
 
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,16 +24,15 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
-    cursor: url('../img/ladrilloMouse.png'), auto;
+    font-size: 15px;
+    /* --- MEJORA 1: Cursor centrado (hotspot 16 16) --- */
+    cursor: url('../img/ladrilloMouse.png') 16 16, auto;
 }
 
 body {
     font-family: var(--font-body);
     color: var(--color-text);
     background-color: var(--color-white);
-    /* --- CAMBIO AQUÍ --- */
-    /* Suma la altura de las 3 barras fijas */
     padding-top: calc(var(--header-height) + var(--top-bar-height) + var(--header-bottom-bar-height));
 }
 
@@ -135,8 +133,7 @@ body {
 /* ==================== HEADER & NAV ==================== */
 .header {
     position: fixed;
-    /* --- CAMBIO AQUÍ --- */
-    top: var(--top-bar-height); /* Se posiciona debajo de la nueva top-bar */
+    top: var(--top-bar-height); 
     left: 0;
     width: 100%;
     height: var(--header-height);
@@ -154,8 +151,7 @@ body {
 }
 
 .header__logo-img {
-    /* --- CAMBIO AQUÍ --- */
-    height: 70px; /* Aumentado de 55px a 70px */
+    height: 100px; 
     transition: height 0.3s ease;
 }
 
@@ -171,8 +167,7 @@ body {
     color: var(--color-primary);
     font-family: var(--font-headings);
     font-weight: 700;
-    /* --- CAMBIO AQUÍ --- */
-    font-size: 1.2rem; /* Aumentado de 1.1rem a 1.2rem */
+    font-size: 1.2rem; 
     padding: 5px 0;
     position: relative;
 }
@@ -194,9 +189,8 @@ body {
 }
 
 .nav__link--button {
-    /* --- CAMBIO AQUÍ --- */
-    font-size: 1.2rem; /* Aumentado */
-    padding: 0.7rem 1.4rem; /* Ligeramente más grande */
+    font-size: 1.2rem; 
+    padding: 0.7rem 1.4rem; 
     background-color: var(--color-accent);
     color: var(--color-dark);
     border-radius: 5px;
@@ -221,7 +215,6 @@ body {
 /* ==================== HEADER BOTTOM BAR (NUEVA) ==================== */
 .header-bottom-bar {
     position: fixed;
-    /* --- CAMBIO AQUÍ --- */
     top: calc(var(--top-bar-height) + var(--header-height));
     left: 0;
     width: 100%;
@@ -234,7 +227,6 @@ body {
 /* ======== HERO (SOLO PÁGINA DE INICIO) ======== */
 .hero {
     position: relative;
-    /* --- CAMBIO AQUÍ --- */
     min-height: calc(100vh - (var(--header-height) + var(--top-bar-height) + var(--header-bottom-bar-height)));
     display: flex;
     align-items: center;
@@ -434,7 +426,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     user-select: none;
-    aspect-ratio: 4 / 4; 
+    /* --- MEJORA 2: Imágenes verticales --- */
+    aspect-ratio: 3 / 4; 
 }
 
 .slider-image {
@@ -813,7 +806,7 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #25D366; /* Color oficial de WhatsApp */
+    background-color: #25D366; 
     color: #fff;
     width: 60px;
     height: 60px;
@@ -838,8 +831,8 @@ body {
 .card-explosion-overlay {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(8, 1fr);    
     z-index: 2000;
     pointer-events: none;
     overflow: hidden; 
@@ -863,19 +856,16 @@ body {
 /* Para tablets y móviles (hasta 992px) */
 @media screen and (max-width: 992px) {
     :root {
-        /* --- CAMBIO AQUÍ --- */
-        --header-height: 90px; /* Un solo header más grande en móvil */
+        --header-height: 90px; 
     }
 
     body {
-        /* --- CAMBIO AQUÍ --- */
-        padding-top: var(--header-height); /* Solo la altura del header */
+        padding-top: var(--header-height); 
     }
 
-    /* --- NUEVAS REGLAS --- */
     .top-bar,
     .header-bottom-bar {
-        display: none; /* Oculta las barras extra en móviles */
+        display: none; 
     }
     
     .container {
@@ -895,13 +885,12 @@ body {
     }
     
     .header {
-        /* --- CAMBIO AQUÍ --- */
-        top: 0; /* Pega el header principal arriba */
+        top: 0; 
         height: var(--header-height);
     }
 
     .header__logo-img {
-        height: 55px; 
+        height: 80px; 
     }
 
     .nav__toggle {
@@ -912,12 +901,12 @@ body {
         position: fixed;
         top: 0; 
         right: -100%;
-        width: 75%;
+        width: 50%;
         max-width: 320px;
         height: 100%;
         background-color: var(--color-dark);
         box-shadow: -5px 0 15px rgba(0,0,0,0.15);
-        padding: 6rem 2rem 2rem;
+        padding: 7rem 2rem 2rem;
         transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -1026,5 +1015,13 @@ body {
 
     .bottom-bar__icons {
         order: -1;
+    }
+    
+    .top-bar__email {
+        display: none;
+    }
+    
+    .top-bar__container {
+        justify-content: center;
     }
 }
