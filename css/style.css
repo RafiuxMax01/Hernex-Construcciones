@@ -11,7 +11,10 @@
     --font-headings: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    --header-height: 95px;
+    /* --- CAMBIOS AQUÍ --- */
+    --header-height: 105px; /* Aumentado de 95px a 105px */
+    --top-bar-height: 35px; /* Altura de la nueva barra superior */
+    --header-bottom-bar-height: 8px; /* Altura de la nueva barra inferior */
 }
 
 * {
@@ -23,13 +26,20 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    cursor: url('../img/ladrilloMouse.png'), auto;
 }
 
 body {
     font-family: var(--font-body);
     color: var(--color-text);
     background-color: var(--color-white);
-    padding-top: var(--header-height);
+    /* --- CAMBIO AQUÍ --- */
+    /* Suma la altura de las 3 barras fijas */
+    padding-top: calc(var(--header-height) + var(--top-bar-height) + var(--header-bottom-bar-height));
+}
+
+.slider-container {
+    cursor: col-resize;
 }
 
 .container {
@@ -71,7 +81,6 @@ body {
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    cursor: pointer;
 }
 
 .btn--primary {
@@ -88,10 +97,46 @@ body {
     text-align: center;
 }
 
+/* ==================== TOP BAR (NUEVA) ==================== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--top-bar-height);
+    background-color: var(--color-dark);
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1001;
+}
+
+.top-bar__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.top-bar__contact {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.top-bar__contact span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-bar__contact .fas {
+    color: var(--color-accent);
+}
+
 /* ==================== HEADER & NAV ==================== */
 .header {
     position: fixed;
-    top: 0;
+    /* --- CAMBIO AQUÍ --- */
+    top: var(--top-bar-height); /* Se posiciona debajo de la nueva top-bar */
     left: 0;
     width: 100%;
     height: var(--header-height);
@@ -109,7 +154,8 @@ body {
 }
 
 .header__logo-img {
-    height: 55px;
+    /* --- CAMBIO AQUÍ --- */
+    height: 70px; /* Aumentado de 55px a 70px */
     transition: height 0.3s ease;
 }
 
@@ -125,7 +171,8 @@ body {
     color: var(--color-primary);
     font-family: var(--font-headings);
     font-weight: 700;
-    font-size: 1.1rem;
+    /* --- CAMBIO AQUÍ --- */
+    font-size: 1.2rem; /* Aumentado de 1.1rem a 1.2rem */
     padding: 5px 0;
     position: relative;
 }
@@ -147,7 +194,9 @@ body {
 }
 
 .nav__link--button {
-    padding: 0.6rem 1.2rem;
+    /* --- CAMBIO AQUÍ --- */
+    font-size: 1.2rem; /* Aumentado */
+    padding: 0.7rem 1.4rem; /* Ligeramente más grande */
     background-color: var(--color-accent);
     color: var(--color-dark);
     border-radius: 5px;
@@ -165,15 +214,28 @@ body {
 .nav__toggle,
 .nav__close {
     font-size: 1.5rem;
-    cursor: pointer;
     display: none;
     color: var(--color-primary);
 }
 
+/* ==================== HEADER BOTTOM BAR (NUEVA) ==================== */
+.header-bottom-bar {
+    position: fixed;
+    /* --- CAMBIO AQUÍ --- */
+    top: calc(var(--top-bar-height) + var(--header-height));
+    left: 0;
+    width: 100%;
+    height: var(--header-bottom-bar-height);
+    background-color: var(--color-dark);
+    z-index: 999;
+}
+
+
 /* ======== HERO (SOLO PÁGINA DE INICIO) ======== */
 .hero {
     position: relative;
-    min-height: calc(100vh - var(--header-height));
+    /* --- CAMBIO AQUÍ --- */
+    min-height: calc(100vh - (var(--header-height) + var(--top-bar-height) + var(--header-bottom-bar-height)));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -371,12 +433,8 @@ body {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    cursor: col-resize;
     user-select: none;
-    /* --- ¡CAMBIO AQUÍ! --- 
-      Cambiado de 3/4 (alto) a 4/3 (más apaisado) para que ocupe menos espacio vertical.
-    */
-    aspect-ratio: 4 / 3; 
+    aspect-ratio: 4 / 4; 
 }
 
 .slider-image {
@@ -458,8 +516,7 @@ body {
     border-radius: 4px;
     pointer-events: none;
     z-index: 5;
-    /* --- ¡CAMBIO AQUÍ! --- */
-    transition: opacity 0.3s ease; /* Transición suave para ocultar */
+    transition: opacity 0.3s ease;
 }
 
 .slider-label--before {
@@ -751,27 +808,49 @@ body {
     color: rgba(255, 255, 255, 0.3);
 }
 
+/* ======== BOTÓN FLOTANTE DE WHATSAPP ======== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
 /* ======================================================= */
 /* ======== ANIMACIÓN DE LADRILLOS (TRANSICIÓN) ======== */
 /* ======================================================= */
 .card-explosion-overlay {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas */
-    grid-template-rows: repeat(8, 1fr);    /* 8 filas = 40 ladrillos */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     z-index: 2000;
     pointer-events: none;
-    overflow: hidden; /* Oculta los ladrillos que se salen */
+    overflow: hidden; 
 }
 
 .explosion-brick {
-    background-color: var(--color-primary); /* Mismo color que la tarjeta */
+    background-color: var(--color-primary); 
     width: 100%;
     height: 100%;
-    /* Estado inicial (antes de la animación) */
     transform: translate(0, 0) rotate(0) scale(1);
     opacity: 1;
-    /* Transición para la animación de "explosión" */
     transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -784,13 +863,21 @@ body {
 /* Para tablets y móviles (hasta 992px) */
 @media screen and (max-width: 992px) {
     :root {
-        --header-height: 80px;
+        /* --- CAMBIO AQUÍ --- */
+        --header-height: 90px; /* Un solo header más grande en móvil */
     }
 
     body {
-        padding-top: var(--header-height);
+        /* --- CAMBIO AQUÍ --- */
+        padding-top: var(--header-height); /* Solo la altura del header */
     }
 
+    /* --- NUEVAS REGLAS --- */
+    .top-bar,
+    .header-bottom-bar {
+        display: none; /* Oculta las barras extra en móviles */
+    }
+    
     .container {
         padding: 0 1rem;
     }
@@ -806,9 +893,15 @@ body {
     .section__subtitle {
         font-size: 1rem;
     }
+    
+    .header {
+        /* --- CAMBIO AQUÍ --- */
+        top: 0; /* Pega el header principal arriba */
+        height: var(--header-height);
+    }
 
     .header__logo-img {
-        height: 55px;
+        height: 55px; 
     }
 
     .nav__toggle {
@@ -817,7 +910,7 @@ body {
 
     .nav {
         position: fixed;
-        top: 0;
+        top: 0; 
         right: -100%;
         width: 75%;
         max-width: 320px;
@@ -861,6 +954,10 @@ body {
         right: 1.5rem;
         font-size: 1.8rem;
         color: var(--color-accent);
+    }
+    
+    .hero {
+        min-height: calc(100vh - var(--header-height));
     }
 
     .hero h1 {

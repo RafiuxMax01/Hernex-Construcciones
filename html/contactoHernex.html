@@ -14,17 +14,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+
+    <div class="top-bar">
+        <div class="container top-bar__container">
+            <div class="top-bar__contact">
+                <span><i class="fas fa-phone-alt"></i> 449 228 9906</span>
+                <span class="top-bar__email"><i class="fas fa-envelope"></i> contacto@hernex.com</span>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container header__container">
             <a href="indexHernex.html" class="header__logo"><img src="../img/LogotipoHernex.png" alt="Logo Hernex" class="header__logo-img"></a>
             
             <nav class="nav" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="indexHernex.html" class="nav__link active">Inicio</a></li>
+                    <li class="nav__item"><a href="indexHernex.html" class="nav__link">Inicio</a></li>
                     <li class="nav__item"><a href="serviciosHernex.html" class="nav__link">Servicios</a></li>
                     <li class="nav__item"><a href="proyectosHernex.html" class="nav__link">Proyectos</a></li>
                     <li class="nav__item"><a href="sobre-miHernex.html" class="nav__link">Sobre Mí</a></li>
-                    <li class="nav__item"><a href="contactoHernex.html" class="nav__link nav__link--button">Contacto</a></li>
+                    <li class="nav__item"><a href="contactoHernex.html" class="nav__link nav__link--button active">Contacto</a></li>
                 </ul>
                 <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
             </nav>
@@ -32,6 +42,8 @@
             <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
+
+    <div class="header-bottom-bar"></div>
 
     <main>
         <section class="section page-header">
@@ -45,7 +57,6 @@
             <div class="container">
                 <div class="contact-grid">
                     
-                    <!-- Columna del Formulario -->
                     <div class="contact-form-container">
                         <h2>Envíanos un Mensaje</h2>
                         <form action="#" method="POST" class="contact-form">
@@ -73,7 +84,6 @@
                         </form>
                     </div>
 
-                    <!-- Columna de Información y Mapa -->
                     <div class="contact-info-container">
                         <h2>Información de Contacto</h2>
                         <p>No dudes en llamarnos o visitarnos. Estamos para servirte.</p>
@@ -103,7 +113,6 @@
                         </div>
 
                         <div class="map-container">
-                            <!-- ¡IMPORTANTE! Aquí debes pegar el código de Google Maps -->
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236953.4783821551!2d-102.48323831640623!3d21.854228900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee1812426363%3A0x449b9935a36e7f8c!2sAguascalientes!5e0!3m2!1ses-419!2smx!4v1678845632145!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
